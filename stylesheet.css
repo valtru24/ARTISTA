@@ -1,266 +1,304 @@
-
+/* Variables de color */
 :root {
-    color: #ffffff;
-   background-color: #181818;
-}
-:root main{
-    padding: 20px;
-    max-width: 800px;
-    margin: auto;
-    background-color: #262626;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    --primary-color: #ffffff;
+    --bg-dark: #181818;
+    --bg-light: #f4f4f4;
+    --highlight-dark: #8B0000; /* Bordó */
+    --highlight-light: #003366; /* Azul marino */
+    --text-dark: #E0E0E0;
+    --text-light: #333333;
 }
 
-:root #letra {
-    margin-top: 20px; 
-    padding: 20px;
-    background-color:  #181818;
-    border: 1px solid  #FF69B4;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 100%; 
-    max-width: 600px;
-    text-align: left;
-    font-size: 1.1em;
-    white-space: pre-wrap; 
-
-}
-
-
-[tema="light"]{
-    color: #000;
-    background-color: #f4f4f4;
-}
-
+/* Modos claro y oscuro */
 body {
     font-family: sans-serif;
     margin: 0;
     padding: 0;
+    background-color: var(--bg-light);
+    color: var(--text-light);
+    transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+body[tema="dark"] {
+    background-color: var(--bg-dark);
+    color: var(--text-dark);
+}
+
+/* Header y menú */
+.TOP {
+    background-image: url('IMAGENES/TOP.jpg');
+    height: 30vh;
+    background-size: cover;
+    background-position: center;
 }
 
 header {
-    background-color: #FF69B4;
-    color: #fff;
-    padding: 20px;
-    flex-direction: row;
+    padding: 2% 5%; /* Margen en los laterales */
+    display: flex;
     align-items: center;
-    width: 100%;
-    position: relative;
-    display: flex; 
-    justify-content: space-evenly;
-}
-
-header .logo {
-    width: 100px;
-    margin-right: 2.5%;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    width: 90%;
+    margin: auto;
+    background-color: inherit;
 }
 
 header h1 {
-    margin: 0;
     font-size: 2em;
     font-weight: bold;
+    color: var(--text-dark);
 }
 
 header ul {
     display: flex;
-    flex-direction: row;
-    align-items: center;
     list-style: none;
-    margin: 0;
     padding: 0;
+    margin: 0;
 }
 
 header ul li {
-    padding: 0 15px;
-    font-size: 1.2rem;
+    margin-left: 5%;
 }
 
 header ul li a {
+    color: var(--text-dark);
     text-decoration: none;
-    color: white;
+    font-weight: bolder;
 }
 
-footer {
-    background-color: #FF69B4;
-    color: #fff;
-    text-align: center;
-    padding: 10px;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
+body[tema="light"] header ul li a,
+body[tema="light"] header h1 {
+    color: var(--text-dark);
 }
 
-footer p {
-    margin: 0;
-}
-
-[tema="light"] main {
-    padding: 20px;
-    max-width: 800px;
+/* Main y secciones */
+main {
+    padding: 2%;
+    max-width: 80%;
     margin: auto;
-    background-color: #fff;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-main h2 {
-    font-weight: bold;
-    border-bottom: 2px solid #FF69B4;
-    padding-bottom: 10px;
-    margin-bottom: 20px;
+#bio h2, .discografia h3 {
+    color: var(--highlight-dark);
+    border-bottom: 2px solid var(--highlight-dark);
+    padding-bottom: 2%;
 }
 
-main p {
-    font-weight: normal;
-    line-height: 1.6;
+body[tema="light"] #bio h2,
+body[tema="light"] .discografia h3 {
+    color: var(--highlight-light);
 }
 
-main ul {
-    padding: 0;
+.album {
+    display: flex;
+    flex-direction: row;
+    margin: 2% 0;
+}
+
+.album img {
+    width: 30%;
+    height: auto;
+    object-fit: cover;
+    margin-right: 2%;
+    border-radius: 8px;
+}
+
+.album-info h4 {
+    color: var(--highlight-dark);
     margin: 0;
 }
 
-main ul li {
-    padding: 5px 0;
-    margin: 0;
-    font-weight: normal;
+body[tema="light"] .album-info h4 {
+    color: var(--highlight-light);
+}
+
+.album-info ul {
     list-style: none;
+    padding: 0;
 }
 
-main img {
-    width: 300px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    display: block;
-    margin-bottom: 20px;
-}
-
-.discografia p {
-    font-weight: bold;
-    color: #FF69B4;
-}
-
+/* Galería de imágenes */
 .gallery {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
-    justify-content: center;
+    gap: 2%;
+    justify-content: left;
 }
 
 .gallery img {
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
+    width: 10rem;  /* Width of the image */
+    height: 10rem; /* Height of the image */
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 1.5%;
+    object-fit: cover; /* This ensures the image fills the square area proportionally and is centered */
+}
+/*Busca letras*/
+/* Sección Busca Letras */
+.BusaLetras {
+    margin: 2% auto; /* Margen superior e inferior con centrado */
+    max-width: 500px; /* Ancho máximo de la sección */
+    padding: 2%; /* Espaciado interno */
+    background-color: var(--bg-light); /* Color de fondo */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
 }
 
-.BuscaLetras {
-    justify-content: center;
-    align-items: center;
+/* Estilo del formulario */
+#letrasForm {
     display: flex;
-    flex-direction: column; 
+    flex-direction: column; /* Alineación vertical */
 }
 
-form {
-    background-color: #ff69b4;
-    padding-right: 8%;
-    padding-left: 8%;
-    padding-top: 2.5%;
-    padding-bottom: 2.5%;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: fit-content;
-    margin-bottom: 2%; 
+/* Estilo de la etiqueta */
+#letrasForm label {
+    margin-bottom: 0.5em; /* Espaciado debajo de la etiqueta */
+    color: var(--highlight-dark); /* Color de la etiqueta */
+    font-weight: bold; /* Negrita */
 }
 
-label {
-    display: block;
-    margin-bottom: 8px;
-    color: white;
+/* Estilo del campo de entrada */
+#letrasForm input[type="text"] {
+    padding: 0.5em; /* Espaciado interno */
+    border: 1px solid var(--highlight-dark); /* Borde color de acento */
+    border-radius: 4px; /* Bordes redondeados */
+    color: var(--text-dark); /* Color del texto */
+    background-color: var(--bg-light); /* Fondo del input */
+    transition: border-color 0.3s; /* Transición suave */
 }
 
-input[type="text"],
-input[type="password"] {
+/* Color del placeholder */
+#letrasForm input[type="text"]::placeholder {
+    color: var(--text-light); /* Color del placeholder */
+}
+
+/* Efecto de foco en el campo de entrada */
+#letrasForm input[type="text"]:focus {
+    border-color: var(--highlight-light); /* Color del borde en foco */
+    outline: none; /* Eliminar el contorno predeterminado */
+}
+
+/* Estilo del botón */
+#letrasForm button {
+    margin-top: 1em; /* Margen superior del botón */
+    padding: 0.5em; /* Espaciado interno */
+    background-color: var(--highlight-dark); /* Fondo del botón */
+    color: #ffffff; /* Color del texto del botón */
+    border: none; /* Sin borde */
+    border-radius: 4px; /* Bordes redondeados */
+    cursor: pointer; /* Cambiar cursor al pasar el mouse */
+    transition: background-color 0.3s; /* Transición suave para el color de fondo */
+}
+
+#letrasForm button:hover {
+    background-color: var(--highlight-light); /* Color de fondo al pasar el mouse */
+}
+.letra {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+
+/* Footer */
+footer {
+    background-color: var(--highlight-dark);
+    color: #ffffff;
+    text-align: center;
+    padding: 1%;
+    position: relative;
+    bottom: 0;
     width: 100%;
-    padding: 2.5%;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
 }
 
-input[type="checkbox"] {
-    margin-right: 5px;
+/* Botón de cambio de tema */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 40px; /* Ajuste de ancho */
+    height: 20px; /* Ajuste de alto */
+    margin-top: 10px; /* Margen superior */
+    margin-left: 10px; /* Margen a la izquierda */
 }
 
-button {
-    width: 100%;
-    padding: 10px;
-    background-color: white;
-    color: #ff69b4;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-weight: bold;
-}
-
-button:hover {
-    background-color: #43005E;
-    color: white;
-}
-
-[tema="light"] #letra {
-    margin-top: 20px; 
-    padding: 20px;
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 100%; 
-    max-width: 600px;
-    text-align: left;
-    font-size: 1.1em;
-    white-space: pre-wrap; 
-}
-
-/*Botón de cambio de tema*/
-
-#switch {
-    margin-left: 20px; 
-}
-
-input[type="checkbox"] {
-    display: none; 
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
 }
 
 .slider {
-    position: relative;
+    position: absolute;
     cursor: pointer;
-    width: 60px;
-    height: 34px;
-    background-color: #ccc; 
-    border-radius: 34px;
-    transition: background-color 0.4s;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 20px; /* Ajuste de border-radius para mantener proporción */
 }
 
 .slider:before {
     position: absolute;
     content: "";
-    height: 26px;
-    width: 26px;
-    left: 4px;
-    bottom: 4px;
-    background-color: #999; 
+    height: 16px; /* Ajuste de alto del círculo */
+    width: 16px; /* Ajuste de ancho del círculo */
+    left: 2px; /* Ajuste de posición para centrado */
+    bottom: 2px; /* Ajuste de posición para centrado */
+    background-color: white;
+    transition: 0.4s;
     border-radius: 50%;
-    transition: transform 0.4s;
 }
 
 input:checked + .slider {
-    background-color: #777; 
+    background-color: #777;
 }
 
 input:checked + .slider:before {
-    transform: translateX(26px); 
-    background-color: #ccc; 
+    transform: translateX(20px); /* Ajuste para el nuevo ancho del slider */
+}
+
+
+/* Media queries */
+@media (max-width: 768px) {
+    .album {
+        flex-direction: column;
+        align-items: left;
+    }
+    .album img {
+        margin-right: 0;
+        margin-bottom: 5%;
+        width: 50%;
+    }
+    main {
+        padding: 5%;
+    }
+}
+
+@media (max-width: 480px) {
+    header ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    header ul li {
+        margin-left: 0;
+    }
+    main {
+        padding: 5%;
+    }
+}
+
+.loader {
+    border: 8px solid #f3f3f3; /* Color de fondo del spinner */
+    border-top: 8px solid var(--highlight-dark); /* Color del borde superior */
+    border-radius: 50%; /* Hace que el loader sea un círculo */
+    width: 40px; /* Ancho del loader */
+    height: 40px; /* Alto del loader */
+    animation: spin 1s linear infinite; /* Animación de rotación */
+    margin: 20px auto; /* Centrando el loader */
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
