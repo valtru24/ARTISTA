@@ -1,0 +1,266 @@
+
+:root {
+    color: #ffffff;
+   background-color: #181818;
+}
+:root main{
+    padding: 20px;
+    max-width: 800px;
+    margin: auto;
+    background-color: #262626;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+:root #letra {
+    margin-top: 20px; 
+    padding: 20px;
+    background-color:  #181818;
+    border: 1px solid  #FF69B4;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%; 
+    max-width: 600px;
+    text-align: left;
+    font-size: 1.1em;
+    white-space: pre-wrap; 
+
+}
+
+
+[tema="light"]{
+    color: #000;
+    background-color: #f4f4f4;
+}
+
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #FF69B4;
+    color: #fff;
+    padding: 20px;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    position: relative;
+    display: flex; 
+    justify-content: space-evenly;
+}
+
+header .logo {
+    width: 100px;
+    margin-right: 2.5%;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+header ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+header ul li {
+    padding: 0 15px;
+    font-size: 1.2rem;
+}
+
+header ul li a {
+    text-decoration: none;
+    color: white;
+}
+
+footer {
+    background-color: #FF69B4;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+footer p {
+    margin: 0;
+}
+
+[tema="light"] main {
+    padding: 20px;
+    max-width: 800px;
+    margin: auto;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+main h2 {
+    font-weight: bold;
+    border-bottom: 2px solid #FF69B4;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+main p {
+    font-weight: normal;
+    line-height: 1.6;
+}
+
+main ul {
+    padding: 0;
+    margin: 0;
+}
+
+main ul li {
+    padding: 5px 0;
+    margin: 0;
+    font-weight: normal;
+    list-style: none;
+}
+
+main img {
+    width: 300px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: block;
+    margin-bottom: 20px;
+}
+
+.discografia p {
+    font-weight: bold;
+    color: #FF69B4;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.gallery img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.BuscaLetras {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column; 
+}
+
+form {
+    background-color: #ff69b4;
+    padding-right: 8%;
+    padding-left: 8%;
+    padding-top: 2.5%;
+    padding-bottom: 2.5%;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: fit-content;
+    margin-bottom: 2%; 
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: white;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 2.5%;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: white;
+    color: #ff69b4;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #43005E;
+    color: white;
+}
+
+[tema="light"] #letra {
+    margin-top: 20px; 
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%; 
+    max-width: 600px;
+    text-align: left;
+    font-size: 1.1em;
+    white-space: pre-wrap; 
+}
+
+/*Botón de cambio de tema*/
+
+#switch {
+    margin-left: 20px; 
+}
+
+input[type="checkbox"] {
+    display: none; 
+}
+
+.slider {
+    position: relative;
+    cursor: pointer;
+    width: 60px;
+    height: 34px;
+    background-color: #ccc; 
+    border-radius: 34px;
+    transition: background-color 0.4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: #999; 
+    border-radius: 50%;
+    transition: transform 0.4s;
+}
+
+input:checked + .slider {
+    background-color: #777; 
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px); 
+    background-color: #ccc; 
+}
