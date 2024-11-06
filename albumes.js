@@ -7,13 +7,13 @@ document.querySelectorAll('.album').forEach(album => {
 
 function fetchAlbumSongs(albumName) {
     const albumInfoDiv = document.getElementById('albumInfo');
-    albumInfoDiv.innerHTML = '<div class="loader"></div>';  // Mostrar cargando mientras se fetch.
+    albumInfoDiv.innerHTML = '<div class="loader"></div>'; 
 
     fetch(`ALBUMES/${albumName}.html`)
         .then(response => response.text())
         .then(data => {
             albumInfoDiv.innerHTML = data;
-            albumInfoDiv.style.display = 'block';  // Mostrar la lista de canciones
+            albumInfoDiv.style.display = 'block';  
         })
         .catch(error => {
             console.error('Error al cargar el archivo:', error);
