@@ -91,34 +91,59 @@ main {
     border-bottom: 2px solid var(--highlight-dark);
     padding-bottom: 2%;
 }
-
-.album {
+/*ALBUM*/
+/* Galería de álbumes */
+.album-gallery {
     display: flex;
-    flex-direction: row;
-    margin: 2% 0;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 1.5rem;
 }
 
 .album img {
-    width: 30%;
+    width: 100%;
+    max-width: 250px;
     height: auto;
-    object-fit: cover;
-    margin-right: 2%;
     border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
 }
 
-.album-info h4 {
-    color: var(--highlight-dark);
-    margin: 0;
+.album img:hover {
+    transform: scale(1.05);
 }
 
-body[tema="light"] .album-info h4 {
-    color: var(--highlight-light);
+.album-info {
+    display: none;
+    padding: 2%;
+    background-color: var(--bg-light);
+    color: var(--text-light);
+    border-radius: 8px;
+    margin-top: 20px;
 }
 
 .album-info ul {
     list-style: none;
     padding: 0;
 }
+
+.album-info ul li {
+    margin: 0.5em 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .album-gallery {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .album-gallery {
+        flex-direction: column;
+    }
+}
+
 
 /* Galería de imágenes */
 .gallery {
@@ -206,6 +231,7 @@ footer {
     position: relative;
     bottom: 0;
     width: 100%;
+    box-sizing: border-box;
 }
 
 /* claro/oscuro */
