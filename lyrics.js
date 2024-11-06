@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
     const form = document.getElementById('letrasForm');
-    const loader = document.getElementById('loader'); // Selecciona el loader
+    const loader = document.getElementById('loader'); 
 
     form.addEventListener('submit', function(event) {
         event.preventDefault();
@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
             return;
         }
 
-        loader.style.display = 'block'; // Mostrar el loader
+        loader.style.display = 'block'; 
 
         fetch(`https://api.lyrics.ovh/v1/Lana del rey/${encodeURIComponent(cancion)}`)
             .then(response => response.json())
@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 document.getElementById('letra').innerHTML = '<p>Error al obtener la letra. Intenta nuevamente.</p>';
             })
             .finally(() => {
-                loader.style.display = 'none'; // Ocultar el loader al finalizar
+                loader.style.display = 'none'; 
             });
     });
 });

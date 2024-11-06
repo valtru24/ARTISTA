@@ -3,13 +3,23 @@
     --primary-color: #ffffff;
     --bg-dark: #181818;
     --bg-light: #f4f4f4;
-    --highlight-dark: #8B0000; /* Bordó */
-    --highlight-light: #003366; /* Azul marino */
+    --highlight-dark: #8B0000; 
     --text-dark: #E0E0E0;
     --text-light: #333333;
 }
 
 /* Modos claro y oscuro */
+
+body {
+    background-color: var(--bg-light);
+    color:var(--text-light);
+}
+
+body.dark-mode {
+    background-color:var(--bg-dark);
+    color: var(--text-dark);
+}
+
 body {
     font-family: sans-serif;
     margin: 0;
@@ -19,10 +29,6 @@ body {
     transition: background-color 0.4s ease, color 0.4s ease;
 }
 
-body[tema="dark"] {
-    background-color: var(--bg-dark);
-    color: var(--text-dark);
-}
 
 /* Header y menú */
 .TOP {
@@ -33,7 +39,7 @@ body[tema="dark"] {
 }
 
 header {
-    padding: 2% 5%; /* Margen en los laterales */
+    padding: 2% 5%; 
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -86,11 +92,6 @@ main {
     padding-bottom: 2%;
 }
 
-body[tema="light"] #bio h2,
-body[tema="light"] .discografia h3 {
-    color: var(--highlight-light);
-}
-
 .album {
     display: flex;
     flex-direction: row;
@@ -123,81 +124,78 @@ body[tema="light"] .album-info h4 {
 .gallery {
     display: flex;
     flex-wrap: wrap;
-    gap: 2%;
-    justify-content: left;
+    gap: 1.5rem; 
+    justify-content: flex-start; 
 }
 
 .gallery img {
-    width: 10rem;  /* Width of the image */
-    height: 10rem; /* Height of the image */
-    border-radius: 8px;
-    margin: 1.5%;
-    object-fit: cover; /* This ensures the image fills the square area proportionally and is centered */
-}
-/*Busca letras*/
-/* Sección Busca Letras */
-.BusaLetras {
-    margin: 2% auto; /* Margen superior e inferior con centrado */
-    max-width: 500px; /* Ancho máximo de la sección */
-    padding: 2%; /* Espaciado interno */
-    background-color: var(--bg-light); /* Color de fondo */
-    border-radius: 8px; /* Bordes redondeados */
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    width: 10rem;     
+    height: 10rem;     
+    border-radius: 0.5rem; 
+    margin: 0.5rem;    
+    object-fit: cover;  
 }
 
-/* Estilo del formulario */
+#loadMoreBtn {
+    margin-top: 1em; 
+    padding: 0.5em; 
+    background-color: var(--highlight-dark); 
+    color: #ffffff; 
+    border: none; 
+    border-radius: 4px; 
+    cursor: pointer;
+    transition: background-color 0.3s; 
+}
+
+/*Busca letras*/
+
+
 #letrasForm {
     display: flex;
-    flex-direction: column; /* Alineación vertical */
+    flex-direction: column; 
 }
 
-/* Estilo de la etiqueta */
 #letrasForm label {
-    margin-bottom: 0.5em; /* Espaciado debajo de la etiqueta */
-    color: var(--highlight-dark); /* Color de la etiqueta */
-    font-weight: bold; /* Negrita */
+    margin-bottom: 0.5em; 
+    color: var(--highlight-dark);
+    font-weight: bold; 
 }
 
-/* Estilo del campo de entrada */
 #letrasForm input[type="text"] {
-    padding: 0.5em; /* Espaciado interno */
-    border: 1px solid var(--highlight-dark); /* Borde color de acento */
-    border-radius: 4px; /* Bordes redondeados */
-    color: var(--text-dark); /* Color del texto */
-    background-color: var(--bg-light); /* Fondo del input */
-    transition: border-color 0.3s; /* Transición suave */
+    padding: 0.5em; 
+    border: 1px solid var(--highlight-dark); 
+    border-radius: 4px; 
+    color: var(--text-dark); 
+    background-color: var(--bg-light); 
+    transition: border-color 0.3s; 
 }
 
-/* Color del placeholder */
 #letrasForm input[type="text"]::placeholder {
-    color: var(--text-light); /* Color del placeholder */
+    color: var(--text-light); 
 }
 
-/* Efecto de foco en el campo de entrada */
 #letrasForm input[type="text"]:focus {
-    border-color: var(--highlight-light); /* Color del borde en foco */
-    outline: none; /* Eliminar el contorno predeterminado */
+    border-color: var(--highlight-light); 
+    outline: none; 
 }
 
-/* Estilo del botón */
 #letrasForm button {
-    margin-top: 1em; /* Margen superior del botón */
-    padding: 0.5em; /* Espaciado interno */
-    background-color: var(--highlight-dark); /* Fondo del botón */
-    color: #ffffff; /* Color del texto del botón */
-    border: none; /* Sin borde */
-    border-radius: 4px; /* Bordes redondeados */
-    cursor: pointer; /* Cambiar cursor al pasar el mouse */
-    transition: background-color 0.3s; /* Transición suave para el color de fondo */
+    margin-top: 1em; 
+    padding: 0.5em; 
+    background-color: var(--highlight-dark); 
+    color: #ffffff; 
+    border: none; 
+    border-radius: 4px; 
+    cursor: pointer; 
+    transition: background-color 0.3s; 
 }
 
 #letrasForm button:hover {
-    background-color: var(--highlight-light); /* Color de fondo al pasar el mouse */
+    background-color: var(--highlight-light); 
 }
 .letra {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
-
 
 /* Footer */
 footer {
@@ -210,14 +208,14 @@ footer {
     width: 100%;
 }
 
-/* Botón de cambio de tema */
+/* claro/oscuro */
 .switch {
     position: relative;
     display: inline-block;
-    width: 40px; /* Ajuste de ancho */
-    height: 20px; /* Ajuste de alto */
-    margin-top: 10px; /* Margen superior */
-    margin-left: 10px; /* Margen a la izquierda */
+    width: 40px; 
+    height: 20px; 
+    margin-top: 10px; 
+    margin-left: 10px; 
 }
 
 .switch input {
@@ -235,16 +233,16 @@ footer {
     bottom: 0;
     background-color: #ccc;
     transition: 0.4s;
-    border-radius: 20px; /* Ajuste de border-radius para mantener proporción */
+    border-radius: 20px; 
 }
 
 .slider:before {
     position: absolute;
     content: "";
-    height: 16px; /* Ajuste de alto del círculo */
-    width: 16px; /* Ajuste de ancho del círculo */
-    left: 2px; /* Ajuste de posición para centrado */
-    bottom: 2px; /* Ajuste de posición para centrado */
+    height: 16px; 
+    width: 16px; 
+    left: 2px; 
+    bottom: 2px; 
     background-color: white;
     transition: 0.4s;
     border-radius: 50%;
@@ -255,11 +253,11 @@ input:checked + .slider {
 }
 
 input:checked + .slider:before {
-    transform: translateX(20px); /* Ajuste para el nuevo ancho del slider */
+    transform: translateX(20px); 
 }
 
 
-/* Media queries */
+/* RESPONSIVE */
 @media (max-width: 768px) {
     .album {
         flex-direction: column;
@@ -288,14 +286,16 @@ input:checked + .slider:before {
     }
 }
 
+/*CARGA CANCIÓN*/
+
 .loader {
-    border: 8px solid #f3f3f3; /* Color de fondo del spinner */
-    border-top: 8px solid var(--highlight-dark); /* Color del borde superior */
-    border-radius: 50%; /* Hace que el loader sea un círculo */
-    width: 40px; /* Ancho del loader */
-    height: 40px; /* Alto del loader */
-    animation: spin 1s linear infinite; /* Animación de rotación */
-    margin: 20px auto; /* Centrando el loader */
+    border: 8px solid #f3f3f3; 
+    border-top: 8px solid var(--highlight-dark); 
+    border-radius: 50%; 
+    width: 40px; 
+    height: 40px; 
+    animation: spin 1s linear infinite; 
+    margin: 20px auto; 
 }
 
 @keyframes spin {
