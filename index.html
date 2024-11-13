@@ -81,7 +81,10 @@
         <div class="BuscaLetras">
             <form action="" id="letrasForm">
                 <label for="cancion">Ingresa el nombre de la canción</label>
-                <input type="text" id="cancion" name="cancion" placeholder="Canción" required>
+                <input type="text" id="cancion" name="cancion" placeholder="Canción" required list="hh">
+                <datalist id="hh">
+                    <option value="lll">lll</option>
+                </datalist>
                 <button type="submit">Buscar</button>
             </form>
             <div class="loader" id="loader" style="display: none;"></div>
