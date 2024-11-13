@@ -175,9 +175,9 @@ main {
 
 #letrasForm input[type="text"] {
     padding: 0.5em; 
-    border: 1px solid var(--highlight-dark); 
+    border: 1px solid var(--highlight-light); 
     border-radius: 4px; 
-    color: var(--text-dark); 
+    color: var(--text-light); 
     background-color: var(--bg-light); 
     transition: border-color 0.3s; 
 }
@@ -190,6 +190,7 @@ main {
     border-color: var(--highlight-light); 
     outline: none; 
 }
+
 
 #letrasForm button {
     margin-top: 1em; 
