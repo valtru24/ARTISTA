@@ -131,19 +131,6 @@ main {
     margin: 0.5em 0;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-    .album-gallery {
-        justify-content: center;
-    }
-}
-
-@media (max-width: 480px) {
-    .album-gallery {
-        flex-direction: column;
-    }
-}
-
 
 /* Galería de imágenes */
 .gallery {
@@ -292,7 +279,7 @@ input:checked + .slider:before {
     .album img {
         margin-right: 0;
         margin-bottom: 5%;
-        width: 50%;
+        width: 100%;
     }
     main {
         padding: 5%;
