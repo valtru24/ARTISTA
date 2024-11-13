@@ -175,7 +175,7 @@ main {
 
 #letrasForm input[type="text"] {
     padding: 0.5em; 
-    border: 1px solid var(--highlight-light); 
+    border: 1px solid var(--highlight-dark); 
     border-radius: 4px; 
     color: var(--text-light); 
     background-color: var(--bg-light); 
